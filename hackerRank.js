@@ -42,18 +42,34 @@
 // };
 
 // Jun 11th, 2016 - Camel Caser  = SOLVED
-function camelCaser(str) {
-    var camelCased = [];
-    str.split(' ').map((word, i) => {
-        if(i === 0) return camelCased.push(word.toLowerCase());  // if it's the 1st word...LowerCase
-        var camelWord = []
-        word.split('').map((letter, i) => {     // gives us letter ['d','i','d']
-            if(i === 0) return camelWord.push(letter.toUpperCase());
-
-            return camelWord.push(letter.toLowerCase());
-        }).join(''); // put the word back together; word = ['Did']
-
-        camelCased.push(camelWord.join(''));
-    });
-    return camelCased.join('');
-};
+// My solution
+// function camelCaser(str) {
+//   var camelCased = [];
+//   str.split(' ').map((word, i) => {
+//     if(i === 0) return camelCased.push(word.toLowerCase());  // if it's the 1st word...LowerCase
+//     var camelWord = []
+//     word.split('').map((letter, i) => {     // gives us letter ['d','i','d']
+//     if(i === 0) return camelWord.push(letter.toUpperCase());
+//
+//     return camelWord.push(letter.toLowerCase());
+//   }).join(''); // put the word back together; word = ['Did']
+//
+//   camelCased.push(camelWord.join(''));
+// });
+// return camelCased.join('');
+// };
+// // Cades - Best solution
+// function cameCaser(str) {
+//   let words = str.toLowerCase().split('');
+//   return words.split('').map((word, i) => {
+//     if(i === 0) return word;
+//     return word[0].toUpperCase() + word.slice(1);
+//   });
+// };
+// // Awesome Online Solution
+// var camelCase = str => {
+//   return str.replace(/\W+(.)/g, function(match, chr)
+//   {
+//     return chr.toUpperCase();
+//   });
+// };
