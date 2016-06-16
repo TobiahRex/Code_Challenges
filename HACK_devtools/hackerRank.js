@@ -203,3 +203,13 @@
 //   }
 // }
 // console.log(remove('hello world', {e : 1, o : 2}));
+
+// // Jun 16th, 2016 -
+// // Move zeros to the end of an array preserving non zeros order.
+// let moveZeros = values => {
+//   let zeros = [], numbers = [];
+//   values.forEach(val => {
+//     val === 0 ? zeros.push(val) : numbers.push(val);
+//   }); return numbers.concat(zeros);
+// };
+// console.log(moveZeros([-1,4,3,0,2,6,0]))
