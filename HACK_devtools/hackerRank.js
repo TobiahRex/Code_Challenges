@@ -213,3 +213,32 @@
 //   }); return numbers.concat(zeros);
 // };
 // console.log(moveZeros([-1,4,3,0,2,6,0]))
+
+// // Jun 17th, 2016 - Count numbers in a string
+// function numberWordSum(str) {
+//     let nums = [];
+//     str.split(' ').map(word => {
+//     word.match(/\bone\b/gi)       ? nums.push(1)    :
+//     word.match(/\btwo\b/gi)       ? nums.push(2)    :
+//     word.match(/\bthree\b/gi)     ? nums.push(3)    :
+//     word.match(/\bfour\b/gi)      ? nums.push(4)    :
+//     word.match(/\bfive\b/gi)      ? nums.push(5)    :
+//     word.match(/\bsix\b/gi)       ? nums.push(6)    :
+//     word.match(/\bseven\b/gi)     ? nums.push(7)    :
+//     word.match(/\beight\b/gi)     ? nums.push(8)    :
+//     word.match(/\bnine\b/gi)      ? nums.push(9)    :
+//     word.match(/\bten\b/gi)       ? nums.push(10)   :
+//     word.match(/\beleven\b/gi)    ? nums.push(11)   :
+//     word.match(/\btwelve\b/gi)    ? nums.push(12)   :
+//     word.match(/\bthirteen\b/gi)  ? nums.push(13)   :
+//     word.match(/\bfourteen\b/gi)  ? nums.push(14)   :
+//     word.match(/\bfifteen\b/gi)   ? nums.push(15)   :
+//     word.match(/\bsixteen\b/gi)   ? nums.push(16)   :
+//     word.match(/\bseventeen\b/gi) ? nums.push(17)   :
+//     word.match(/\beighteen\b/gi)  ? nums.push(18)   :
+//     word.match(/\bnineteen\b/gi)  ? nums.push(19)   :
+//     word.match(/\btwenty\b/gi)    ? nums.push(20)   : null;
+//     });
+//     return nums.reduce((tot, n) => tot + n);
+// }
+// console.log(numberWordSum('This is one, and a two, and a three, and a four.'));
