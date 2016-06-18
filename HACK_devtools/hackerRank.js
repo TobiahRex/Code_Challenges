@@ -245,21 +245,10 @@
 
 // Jun 18th, 2016 - Order words by Number
 function orderWords(str) {
-   let results = {};
-  str.split(' ').map((word, i) => {
+   let results = [];
+  str.split(' ').forEach(word => {
       let num = word.match(/[1-9]/);
-      return results[num[0]] = word;
-  });
-  let final = [];
-  for(var i in results){
-    final.push(results[i])
-  };
-  return final.join(' ');
+      results[num[0]] = word;
+  }); return results.join(' ');
 };
 console.log(orderWords('th3ree on1e fou4r tw2o'));
-
-
-
-
-
-//
