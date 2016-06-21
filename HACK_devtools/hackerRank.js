@@ -204,8 +204,7 @@
 // }
 // console.log(remove('hello world', {e : 1, o : 2}));
 
-// // Jun 16th, 2016 -
-// // Move zeros to the end of an array preserving non zeros order.
+// // Jun 16th, 2016 - Move zeros to the end of an array preserving non zeros order.
 // let moveZeros = values => {
 //   let zeros = [], numbers = [];
 //   values.forEach(val => {
@@ -243,12 +242,49 @@
 // }
 // console.log(numberWordSum('This is one, and a two, and a three, and a four.'));
 
-// Jun 18th, 2016 - Order words by Number
-function orderWords(str) {
-   let results = [];
-  str.split(' ').forEach(word => {
-      let num = word.match(/[1-9]/);
-      results[num[0]] = word;
-  }); return results.join(' ');
-};
-console.log(orderWords('th3ree on1e fou4r tw2o'));
+// // Jun 18th, 2016 - Order words by Number
+// function orderWords(str) {
+//    let results = [];
+//   str.split(' ').forEach(word => {
+//       let num = word.match(/[1-9]/);
+//       results[num[0]] = word;
+//   }); return results.join(' ');
+// };
+// console.log(orderWords('th3ree on1e fou4r tw2o'));
+
+// // Jun 20th, 2016 - HackerRank TEST -
+// let compressor = s => { // Compressor
+//   let resultArr = [];
+//   s.split('').forEach(char => {
+//     let prevLetter = resultArr[resultArr.length - 2];
+//
+//     if(char === prevLetter){
+//       resultArr[resultArr.length - 1]++;
+//     } else {
+//       resultArr.push(char, 1);
+//     };
+//   });
+//   return resultArr.filter(item =>  item !== 1).join('');
+// };
+// console.log(compressor('aaaaaabbbbbbbbbbbbbbbbcccceeef'));
+// regEx answer
+// let compressor = s => {
+//   return s.match(/(.)\1*/g).map(group => {
+//     if(group.length === 1){
+//       return group[0];
+//     } else {
+//       return group[0] + group.length;
+//     }
+//   }).join('');
+// };
+// console.log(compressor('aaaaaabbbbbbbbbbbbbbbbcccceeef'));
+
+// // Jun 21st, 2016 - Return Highest Occurance (1st instance) - 15mins
+// function firstRepeatingLetter(s){
+//   for(var i = 0; i < s.length; i++) {
+//     if(s.slice(i + 1).indexOf(s[i]) > -1){
+//       return s[i]
+//     };
+//   };
+// };
+// console.log(firstRepeatingLetter('ababc'));
