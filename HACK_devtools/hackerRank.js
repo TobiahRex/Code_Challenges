@@ -1,5 +1,82 @@
 'use strict';
 
+// // Jun 23rd, 2016 - Utopian Tree
+// function get_Height(input) {
+//     console.log(input)
+//
+//      if(input.length > 2){
+//          for(let i = 0 ; i< input.length;i++){
+//              let height = input[i+1];
+//              while(input[i+1] > 0){
+//
+//                  tree *= 2;
+//                  tree += 1;
+//                  input--;
+//              }
+//              return height;
+//          }
+//     }
+// }
+// // Cades SOLUTION
+// fuction get_Height(input){
+//   return input.map(numCycles=> {
+//     let height = 1;
+//
+//     for(let i = 1; i <= numCycles; i++){
+//       if(i % 2){
+//         height *= 2;
+//       } else {
+//         height += 1;
+//       }
+//     }
+//     return height;
+//   });
+// }
+//
+// console.log(get_Height([0,1]));
+
+// // Jun 22nd, 2016 - Sort by Frequency Array
+// // SOLUTION 1
+// function sort(arr){
+//   let freq = arr.reduce((freq, num) => {
+//     freq[num] = (freq[num] + 1) || 1 ;  //if we have seen this number before ,otherwise initialize it to 1 ,return the result;
+//     return freq;
+//   }, {});
+//
+//       return arr.sort((a, b)=>{
+//         console.log('freq[a]: ', freq[a], '\nfreq[b]: ', freq[b], '\n freq[a]-freq[b]: ', freq[a]-freq[b]);
+//         // freq[a]:  1
+//         // freq[b]:  2
+//         //  freq[a]-freq[b]:  -1
+//         // freq[a]:  2
+//         // freq[b]:  1
+//         //  freq[a]-freq[b]:  1
+//         // freq[a]:  1
+//         // freq[b]:  1
+//         //  freq[a]-freq[b]:  0
+//         // freq[a]:  2
+//         // freq[b]:  2
+//         //  freq[a]-freq[b]:  0
+//         // freq[a]:  2
+//         // freq[b]:  1
+//         //  freq[a]-freq[b]:  1
+//         // freq[a]:  2
+//         // freq[b]:  1
+//         //  freq[a]-freq[b]:  1
+//         // freq[a]:  1
+//         // freq[b]:  1
+//         //  freq[a]-freq[b]:  0
+//         // [ 1, 3, 4, 2, 2 ]
+//         if(freq[a] === freq[b]){
+//           return a - b;  // return 0  === 'leave it where it is'
+//         } else {
+//           return freq[a]-freq[b]  // return -1 or 1 === 'put it in front or in the back'
+//         };
+//       });
+//   // return arr.sort((a,b) => freq[a]-freq[b] || a - b );
+// }
+// console.log(sort([3,2,1,2,4]));
+
 // // Jun 21st, 2016 - Return Highest Occurance (1st instance) - 15mins
 // function firstRepeatingLetter(s){
 //   for(var i = 0; i < s.length; i++) {
