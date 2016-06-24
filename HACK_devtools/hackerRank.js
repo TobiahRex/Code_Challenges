@@ -1,37 +1,35 @@
 'use strict';
 
-// June 24, 2016 - Diagonal Sum
-// SOLVED - after Time.
-function diagonalSum(matrix) {
-  let n        = matrix.length,
-      diagonal = [];
-
-  for(let j = 0; j < 2 ; j++){
-    diagonal.push([]);
-
-    for(let i = 0; i < n; i++){
-      if(j === 0) diagonal[j][i] = ((n*i)+i);
-
-      if(j === 1){
-        diagonal[j][0] = n - 1;
-        diagonal[j][i] = (diagonal[j][0]*(i+1));
-      };
-    };
-  };
-
-  let flatMatrix  = matrix.toString().split(',').map(Number),
-      diagonalMap = diagonal.toString().split(',').map(Number),
-      answer      = diagonalMap.map(number => flatMatrix[number]);
-
-  return  answer.reduce((tot, n)=> tot + n);
-};
-// // CADES Solution
-// let diagonalSum = matrix => matrix.reduce((sum, arr, i) => { return
-//     sum + arr[i] + arr[arr.length - i - 1];
-//   }, 0);
-console.log(diagonalSum([[1,2,3],[4,5,6],[7,8,9]]), 'ANSWER = 30');
-
-
+// // June 24, 2016 - Diagonal Sum
+// // SOLVED - after Time.
+// function diagonalSum(matrix) {
+//   let n        = matrix.length,
+//       diagonal = [];
+//
+//   for(let j = 0; j < 2 ; j++){
+//     diagonal.push([]);
+//
+//     for(let i = 0; i < n; i++){
+//       if(j === 0) diagonal[j][i] = ((n*i)+i);
+//
+//       if(j === 1){
+//         diagonal[j][0] = n - 1;
+//         diagonal[j][i] = (diagonal[j][0]*(i+1));
+//       };
+//     };
+//   };
+//
+//   let flatMatrix  = matrix.toString().split(',').map(Number),
+//       diagonalMap = diagonal.toString().split(',').map(Number),
+//       answer      = diagonalMap.map(number => flatMatrix[number]);
+//
+//   return  answer.reduce((tot, n)=> tot + n);
+// };
+// // // CADES Solution
+// // let diagonalSum = matrix => matrix.reduce((sum, arr, i) => { return
+// //     sum + arr[i] + arr[arr.length - i - 1];
+// //   }, 0);
+// console.log(diagonalSum([[1,2,3],[4,5,6],[7,8,9]]), 'ANSWER = 30');
 
 // // Jun 23rd, 2016 - Utopian Tree
 // function get_Height(input) {
