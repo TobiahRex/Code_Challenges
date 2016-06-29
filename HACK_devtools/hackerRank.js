@@ -1,9 +1,9 @@
 'use strict';
 
-// June 29, 2016 - Number Complement
-// Convert a given interger to binary, replace the 1's with 0's and vice versa. Convert back to Decimal. ;)
-
-let getIntegerComplement = n => parseInt(newNum = n.toString(2).split('').map(num => num === "0" ? 1 : 0).join(''), 2);
+// // June 29, 2016 - Number Complement
+// // Convert a given interger to binary, replace the 1's with 0's and vice versa. Convert back to Decimal. ;)
+//
+// let getIntegerComplement = n => parseInt(newNum = n.toString(2).split('').map(num => num === "0" ? 1 : 0).join(''), 2);
 
 // // June 24, 2016 - Diagonal Sum
 // // SOLVED - after Time.
