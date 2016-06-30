@@ -2,15 +2,40 @@
 
 $(document).ready(init);
 
+// let numbers =
 function init(){
-  $('p.lead').text(  recur1('toby ', 3)  );
+  $('p.lead').text( closestNumbers([16,3,10,7,13,-4,5])   );
+
+  function closestNumbers(arr) {
+    let srt = arr.sort((a,b) => a-b);
+
+    let smallestDiff = [srt[srt.length-1]];
+    console.log('smallestDiff: ', smallestDiff, '\nsorted: ', srt);
+    for(let i = srt.length; i > 0 ; i--){
+      srt.map(num=> {
+        console.log('srt[i]: ', srt[i-1])
+        let diff = Math.abs(srt[i] - num);
+
+
+
+        smallestDiff.forEach(small => {
+          console.log(small)
+          diff < small ? smallestDiff = [diff] :
+          diff === small ? smallestDiff.push(diff) : null;
+        });
+      });
+    };
+    console.log(smallestDiff);
+  };
+
+
 
   // $('p.lead').text(  wierdNumSplitter(95887664)  );
-
+  //
   // mutliplyAll([1,4,4,4,0,4,3,3,1])
-
+  //
   // $('.hack-btn').on('click', HACK);
-
+  //
   // nextItem([1, 2, 3, 4, 5, 6, 7, 8], 5);
   // function nextItem(xs, item) {
   //   let result;
@@ -22,7 +47,7 @@ function init(){
   //
   // xs.join('').match(item) ? result = xs[(xs.indexOf(item))+1] : result;
   // };
-
+  //
   //   function nextItem(xs, item) {
   //   var found = false;
   //   for (var i of xs) {
@@ -60,6 +85,7 @@ function init(){
 //     return (num * factorial(num - 1));
 //   }
 // }
+// recur1('toby ', 3)
 
 // var result = factorial(8);
 // document.write(result);
