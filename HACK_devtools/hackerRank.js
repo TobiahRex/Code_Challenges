@@ -1,5 +1,29 @@
 'use strict';
 
+// June 31, 2016 - arrayDepth
+function arrayDepth(arr) {
+   let arrStr = JSON.stringify(arr);
+
+    let brackets =    arrStr.match(/[\[]/g);
+    console.log('brackets: ', brackets.length/2, '\n', brackets);
+    //console.log('max: ', max, 'arrStr: ', arrStr)
+}
+
+function arrayDepth(arr){
+  let depth = 0;
+  let record = 0;
+
+  JSON.stringify(arr).split('').forEach(char=>{
+    if(char === "[") depth++;
+    if(char === "]") depth--;
+
+    if(depth > record) record = depth;
+
+  });
+  return record;
+};
+
+
 // // June 29, 2016 - Number Complement
 // // Convert a given interger to binary, replace the 1's with 0's and vice versa. Convert back to Decimal. ;)
 //

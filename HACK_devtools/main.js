@@ -4,33 +4,42 @@ $(document).ready(init);
 
 // let numbers =
 function init(){
-  $('p.lead').text( closestNumbers([16,3,10,7,13,-4,5])   );
+  $('p.lead').text(  arrayDepth([,[,[[]],[],[]]]) );
 
-  function closestNumbers(arr) {
-    let srt = arr.sort((a,b) => a-b);
+ function arrayDepth(arr) {
+    let arrStr = JSON.stringify(arr);
 
-    let smallestDiff = [srt[srt.length-1]];
-    console.log('smallestDiff: ', smallestDiff, '\nsorted: ', srt);
-    for(let i = srt.length; i > 0 ; i--){
-      srt.map(num=> {
-        console.log('srt[i]: ', srt[i-1])
-        let diff = Math.abs(srt[i] - num);
-
+     let brackets =    arrStr.match(/[\[]/g);
+     console.log('brackets: ', brackets.length/2, '\n', brackets);
+     //console.log('max: ', max, 'arrStr: ', arrStr)
+ }
+};
 
 
-        smallestDiff.forEach(small => {
-          console.log(small)
-          diff < small ? smallestDiff = [diff] :
-          diff === small ? smallestDiff.push(diff) : null;
-        });
-      });
-    };
-    console.log(smallestDiff);
-  };
+// closestNumbers([16,3,10,7,13,-4,5])
+//   function closestNumbers(arr) {
+//     let srt = arr.sort((a,b) => a-b);
+//
+//     let smallestDiff = [srt[srt.length-1]];
+//     console.log('smallestDiff: ', smallestDiff, '\nsorted: ', srt);
+//     for(let i = srt.length; i > 0 ; i--){
+//       srt.map(num=> {
+//         console.log('srt[i]: ', srt[i-1])
+//         let diff = Math.abs(srt[i] - num);
+//
+//
+//
+//         smallestDiff.forEach(small => {
+//           console.log(small)
+//           diff < small ? smallestDiff = [diff] :
+//           diff === small ? smallestDiff.push(diff) : null;
+//         });
+//       });
+//     };
+//     console.log(smallestDiff);
+//   };
 
-
-
-  // $('p.lead').text(  wierdNumSplitter(95887664)  );
+// $('p.lead').text(  wierdNumSplitter(95887664)  );
   //
   // mutliplyAll([1,4,4,4,0,4,3,3,1])
   //
@@ -67,7 +76,6 @@ function init(){
   // function* countFrom(n) {
   //   for (let i = n; ; ++i) yield i;
   // }
-};
 
 // // RECURSION Practice
 // function factorial(num)
