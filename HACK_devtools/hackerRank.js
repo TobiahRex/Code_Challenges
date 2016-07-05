@@ -2,16 +2,29 @@
 
 
 
-// July 5th, 2016 - Words in a String
-function missingWords(s, t) {
-  let answer = s.match(/\b\w+\b/gi).map((word, i )=> {
-    return t.match(/\b\w+\b/gi).map((w, i)=> (word !== w) ? word : '' );
-  });
-
-  let result = '';
-  answer.forEach((x, i)=> if(x.indexOf('') === -1) result += x.toString().split(',')[0] + " " );
-  console.log(result)
-};
+// // July 5th, 2016 - Words in a String
+// function missingWords(s, t) {
+//   let answer = s.match(/\b\w+\b/gi).map((word, i )=> {
+//     return t.match(/\b\w+\b/gi).map((w, i)=> (word !== w) ? word : '' );
+//   });
+//
+//   let result = '';
+//   answer.forEach((x, i)=> if(x.indexOf('') === -1) result += x.toString().split(',')[0] + " " );
+//   console.log(result)
+// };
+// // Cades Solution
+// function missingWords(s, t){
+//   let a = s.split(' '),
+//       b = t.split(' '),
+//       missing = [];
+//
+//       a.forEach((word, i)=> {
+//         if(b[i - missing.length] !== word){
+//           missing.push(word);
+//         }
+//       });
+//   return missing
+// }
 
 // // June 31, 2016 - arrayDepth
 // function arrayDepth(arr) {
