@@ -1,27 +1,40 @@
 'use strict';
 
-// June 31, 2016 - arrayDepth
-function arrayDepth(arr) {
-   let arrStr = JSON.stringify(arr);
 
-    let brackets =    arrStr.match(/[\[]/g);
-    console.log('brackets: ', brackets.length/2, '\n', brackets);
-    //console.log('max: ', max, 'arrStr: ', arrStr)
-}
 
-function arrayDepth(arr){
-  let depth = 0;
-  let record = 0;
-
-  JSON.stringify(arr).split('').forEach(char=>{
-    if(char === "[") depth++;
-    if(char === "]") depth--;
-
-    if(depth > record) record = depth;
-
+// July 5th, 2016 - Words in a String
+function missingWords(s, t) {
+  let answer = s.match(/\b\w+\b/gi).map((word, i )=> {
+    return t.match(/\b\w+\b/gi).map((w, i)=> (word !== w) ? word : '' );
   });
-  return record;
+
+  let result = '';
+  answer.forEach((x, i)=> if(x.indexOf('') === -1) result += x.toString().split(',')[0] + " " );
+  console.log(result)
 };
+
+// // June 31, 2016 - arrayDepth
+// function arrayDepth(arr) {
+//    let arrStr = JSON.stringify(arr);
+//
+//     let brackets =    arrStr.match(/[\[]/g);
+//     console.log('brackets: ', brackets.length/2, '\n', brackets);
+//     //console.log('max: ', max, 'arrStr: ', arrStr)
+// }
+//
+// function arrayDepth(arr){
+//   let depth = 0;
+//   let record = 0;
+//
+//   JSON.stringify(arr).split('').forEach(char=>{
+//     if(char === "[") depth++;
+//     if(char === "]") depth--;
+//
+//     if(depth > record) record = depth;
+//
+//   });
+//   return record;
+// };
 
 
 // // June 29, 2016 - Number Complement
