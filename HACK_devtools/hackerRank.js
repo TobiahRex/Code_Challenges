@@ -1,6 +1,29 @@
 'use strict';
 
-
+// // July 14th, 2016 -
+// function growth(start, percent, aug, goal) {
+//     let years = 0;
+//     percent = percent/100 + 1;
+//     if(start > goal) return start;
+//     while(start < goal){
+//        start = Math.floor(start * percent);
+//        (start + aug) < goal ? start += aug : null;
+//        years++;
+//     };
+//     return years;
+// }
+// console.log(growth(100, 10, +10, 200));
+// // July 7th, 2016 - Array Depth
+// function arrayDepth(arr){
+//   let record = 1;
+//   arr.forEach(item => {
+//     let depth = ;
+//     if(Array.isArray(item)){
+//       depth += arrayDepth(item);
+//     }
+//     if(depth > record) record = depth;
+//   });
+// };
 
 // // July 5th, 2016 - Words in a String
 // function missingWords(s, t) {
