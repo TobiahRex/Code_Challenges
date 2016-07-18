@@ -1,6 +1,55 @@
 'use strict';
 
-// // July 14th, 2016 -
+// // July 18th, 2016 - Huge Array Sum
+// function hugeSum(a, b) {
+//   a = a.split('').reverse();
+//   b = b.split('').reverse();
+//
+//   while(a.length < b.length) a.push('0');
+//   while(b.length < a.length) a.push('0');
+//
+//   let carry = 0;
+//   let result = [];
+//
+//   for(let i = 0; i < a.length; i++){
+//     let x = parseInt(a[i]);
+//     let y = parseInt(b[i]);
+//
+//     let sum = x + y + carry;
+//     result.push(sum % 10);
+//     carry = sum >= 10 ? 1 : 0;
+//   }
+//   if(carry) {
+//     result.push(1);
+//   }
+//   return result.reverse().join('');
+// }
+
+// // July 15th, 2016 - Blance the Array
+// function isArrayBalanced(arr) {
+//   if(arr.length < 2) return true;
+//   return arr.map((number, i) => {
+//     if(arr.slice(arr[0], i - 1).reduce((tot, n) => tot + n, 0) ===
+//     arr.slice(arr[i + 1],arr.length).reduce((tot, n) => tot + n, 0)) return true;
+//     return false
+//   })
+// }
+// // modification that should work
+// if(arr.slice(0, i).reduce((tot, n) => tot + n, 0) ===
+// arr.slice(i + 1).reduce((tot, n) => tot + n, 0)) return true;
+//
+// Array.prototype.sum = () => this.reduce((sum, num) => sum + num, 0);
+// function isArrayBalanced(arr) {
+//   const left = 0;
+//   const right = arr.sum();
+//   return arr.some((n, i) => {
+//     right -= n;
+//     if (left === right) return true;
+//     left += n;
+//   });
+// }
+
+// // July 14th, 2016 - Population Growth
 // function growth(start, percent, aug, goal) {
 //     let years = 0;
 //     percent = percent/100 + 1;
@@ -71,7 +120,6 @@
 //   });
 //   return record;
 // };
-
 
 // // June 29, 2016 - Number Complement
 // // Convert a given interger to binary, replace the 1's with 0's and vice versa. Convert back to Decimal. ;)
