@@ -1,5 +1,24 @@
 'use strict';
 
+// July 20th, 2016 - Duplicate Array
+function countDuplicates(numbers) {
+  let count = 0;
+  let seen = 0;
+  numbers.forEach((number, i) => {
+    // seenValues[num] = seenValues[num] + 1 || 1;
+    if (seen === number) {
+      count += 1;
+      numbers.splice(numbers.indexOf(number), 1);
+    } else if (numbers.indexOf(number) > -1 && number !== lastNumber) {
+      count+= 1;
+      numbers.splice(numbers.indexOf(number), 1);
+    }
+  })
+  return count;
+}
+console.log(countDuplicates([1,3,7,8,3,1]));
+
+
 // // July 18th, 2016 - Huge Array Sum
 // function hugeSum(a, b) {
 //   a = a.split('').reverse();
