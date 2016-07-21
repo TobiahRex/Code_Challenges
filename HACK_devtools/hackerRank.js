@@ -1,22 +1,39 @@
 'use strict';
 
-// July 20th, 2016 - Duplicate Array
-function countDuplicates(numbers) {
-  let count = 0;
-  let seen = 0;
-  numbers.forEach((number, i) => {
-    // seenValues[num] = seenValues[num] + 1 || 1;
-    if (seen === number) {
-      count += 1;
-      numbers.splice(numbers.indexOf(number), 1);
-    } else if (numbers.indexOf(number) > -1 && number !== lastNumber) {
-      count+= 1;
-      numbers.splice(numbers.indexOf(number), 1);
-    }
-  })
-  return count;
+// July 21st, 2016 - Tax Calculator
+function taxCalculator(total) {
+  if(total <=0 || isNaN(total)) return 0;
+
+  let tax = 0;
+  let percents = [0.1, 0.07, 0.05, 0.03];
+  let bracket = 0;
+
+  while(total){
+    let value = total < 10 || bracket === 3 ? total : 10;
+    tax += value * percents[bracket];
+    total -= value;
+    bracket++;
+  }
+  return Math.round(tax * 100) / 100;
 }
-console.log(countDuplicates([1,3,7,8,3,1]));
+
+// // July 20th, 2016 - Duplicate Array
+// function countDuplicates(numbers) {
+//   let count = 0;
+//   let seen = 0;
+//   numbers.forEach((number, i) => {
+//     // seenValues[num] = seenValues[num] + 1 || 1;
+//     if (seen === number) {
+//       count += 1;
+//       numbers.splice(numbers.indexOf(number), 1);
+//     } else if (numbers.indexOf(number) > -1 && number !== lastNumber) {
+//       count+= 1;
+//       numbers.splice(numbers.indexOf(number), 1);
+//     }
+//   })
+//   return count;
+// }
+// console.log(countDuplicates([1,3,7,8,3,1]));
 
 
 // // July 18th, 2016 - Huge Array Sum
