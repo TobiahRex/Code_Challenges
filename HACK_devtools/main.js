@@ -4,8 +4,8 @@ $(document).ready(init);
 
 // let numbers =
 function init(){
-  $('p.lead').text(  genSchedule() );
-
+  $('p.lead').text( );
+  // genSchedule()
   // arrayDepth([,[,[[]],[],[]]])
   // function arrayDepth(arr) {
   //    let arrStr = JSON.stringify(arr);
@@ -16,22 +16,22 @@ function init(){
   // }
 };
 
-let genSchedule = () => {
-
-
-  var targetDate = new Date();
-  let d = targetDate.getDate()+100;
-  let m = targetDate.getMonth();
-  let y = targetDate.getFullYear();
-
-
-
-  // let schedule = {
-  //   target : targetDate.setDate(targetDate.getDate() + 100),
-  //   now    : Date.now()
-  // }
-  console.log('targetdate: ', targetDate, '\nd: ', d, '\nm: ', m, '\ny: ', y);
-}
+// let genSchedule = () => {
+//
+//
+//   var targetDate = new Date();
+//   let d = targetDate.getDate()+100;
+//   let m = targetDate.getMonth();
+//   let y = targetDate.getFullYear();
+//
+//
+//
+//   // let schedule = {
+//   //   target : targetDate.setDate(targetDate.getDate() + 100),
+//   //   now    : Date.now()
+//   // }
+//   console.log('targetdate: ', targetDate, '\nd: ', d, '\nm: ', m, '\ny: ', y);
+// }
 
 
 
@@ -112,12 +112,11 @@ let genSchedule = () => {
 //     return (num * factorial(num - 1));
 //   }
 // }
-// recur1('toby ', 3)
-
+//
 // var result = factorial(8);
 // document.write(result);
-// Output: 40320
-//
+// // Output: 40320
+
 // function wierdNumSplitter(num){
 //   let numStr = num.toString().split('').map(Number);
 //   let newStr = numStr.map((n, i) => {
@@ -157,3 +156,4 @@ let genSchedule = () => {
 //
 //   return string = ''
 // };
+// recur1('toby ', 3)

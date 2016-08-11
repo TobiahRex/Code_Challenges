@@ -1,21 +1,51 @@
 'use strict';
 
-// July 21st, 2016 - Tax Calculator
-function taxCalculator(total) {
-  if(total <=0 || isNaN(total)) return 0;
+// // August 10th, 2015 - KIdaptive Sorting algo
+// function customSort(arr) {
+//     arr = arr.sort((a, b) => a - b);
+//     let dictionary = {}
+//
+//     for (let n of arr) {
+//         dictionary[n] = 0;
+//     };
+//     for (let i = 0; i < arr.length; i++){
+//         dictionary[arr[i]] ? dictionary[arr[i]] += 1 : dictionary[arr[i]] = 1;
+//     }
+//
+//     let results = [];
+//     for(let i = 0 ; i < arr.length; i++) {
+//         if(dictionary[arr[i]] < dictionary[arr[i+1]]){
+//             let temp =
+//         }
+//     }
+//
+//     let keys = Object.keys(dictionary);
+//         let results = [];
+//         for(let i = 0; i < keys.length; i++){
+//             let subArr = Array(dictionary[keys[i]]).fill(keys[i]);
+//             results.push(subArr);
+//         }
+//
+//
+//     return results.toString().split(',');
+// }
 
-  let tax = 0;
-  let percents = [0.1, 0.07, 0.05, 0.03];
-  let bracket = 0;
-
-  while(total){
-    let value = total < 10 || bracket === 3 ? total : 10;
-    tax += value * percents[bracket];
-    total -= value;
-    bracket++;
-  }
-  return Math.round(tax * 100) / 100;
-}
+// // July 21st, 2016 - Tax Calculator
+// function taxCalculator(total) {
+//   if(total <=0 || isNaN(total)) return 0;
+//
+//   let tax = 0;
+//   let percents = [0.1, 0.07, 0.05, 0.03];
+//   let bracket = 0;
+//
+//   while(total){
+//     let value = total < 10 || bracket === 3 ? total : 10;
+//     tax += value * percents[bracket];
+//     total -= value;
+//     bracket++;
+//   }
+//   return Math.round(tax * 100) / 100;
+// }
 
 // // July 20th, 2016 - Duplicate Array
 // function countDuplicates(numbers) {
@@ -34,7 +64,6 @@ function taxCalculator(total) {
 //   return count;
 // }
 // console.log(countDuplicates([1,3,7,8,3,1]));
-
 
 // // July 18th, 2016 - Huge Array Sum
 // function hugeSum(a, b) {
