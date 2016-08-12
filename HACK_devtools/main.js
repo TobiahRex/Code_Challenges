@@ -4,17 +4,41 @@ $(document).ready(init);
 
 // let numbers =
 function init(){
-  $('p.lead').text( );
-  // genSchedule()
-  // arrayDepth([,[,[[]],[],[]]])
-  // function arrayDepth(arr) {
-  //    let arrStr = JSON.stringify(arr);
-  //
-  //     let brackets =    arrStr.match(/[\[]/g);
-  //     console.log('brackets: ', brackets.length/2, '\n', brackets);
-  //     //console.log('max: ', max, 'arrStr: ', arrStr)
-  // }
+  $('p.lead').text( solution([1,0,-1,2,4,8,5,3,2,2,4,3,5], 5) );
 };
+
+function solution(A, D) {
+
+  var steps = D; // required jump distance
+  var result = 0;
+  var bitmap = [];
+  bitmap[D + 1] = 1; // start with 1 active stone.
+  for (var i = 0; i < A.length; i++){
+    if(!bitmap[A[i]]){  // check stones position to see if there is already a stone
+      bitmap[A[i]] = 1; // if there is no stone, then indicate that there is now a stone.
+      steps--;  // decrement the required distance the monkey needs to jump now that he/she has another stone. 
+    }
+    if (steps === 0) { //if there are no more reuqired steps, then we're done calculating.
+                      // the more stones you add, the lower the jump distance rquirement.
+
+      return result = i;
+    }
+  }
+  return -1;
+}
+
+
+
+
+// genSchedule()
+// arrayDepth([,[,[[]],[],[]]])
+// function arrayDepth(arr) {
+//    let arrStr = JSON.stringify(arr);
+//
+//     let brackets =    arrStr.match(/[\[]/g);
+//     console.log('brackets: ', brackets.length/2, '\n', brackets);
+//     //console.log('max: ', max, 'arrStr: ', arrStr)
+// }
 
 // let genSchedule = () => {
 //
@@ -32,8 +56,6 @@ function init(){
 //   // }
 //   console.log('targetdate: ', targetDate, '\nd: ', d, '\nm: ', m, '\ny: ', y);
 // }
-
-
 
 // closestNumbers([16,3,10,7,13,-4,5])
 //   function closestNumbers(arr) {
