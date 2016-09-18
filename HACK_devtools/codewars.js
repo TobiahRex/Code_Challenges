@@ -32,7 +32,6 @@ const errBob = string => newString = string
     return word
   })
   .join('')
-}
 console.log(errBob("Hello, I AM Mr Bob"))
 /*
   Given test Cases:
