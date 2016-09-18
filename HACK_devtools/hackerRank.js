@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 // // August 10th, 2015 - KIdaptive Sorting algo
 // function customSort(arr) {
 //     arr = arr.sort((a, b) => a - b);
@@ -394,7 +392,7 @@
 // };
 // console.log(moveZeros([-1,4,3,0,2,6,0]))
 
-// // Jun 15th, 2016 -
+// // Jun 15th, 2016 - Remove letters x times inside String
 // function remove(str, obj) {
 //   let letters = str.split(''),
 //   numbers = [],
@@ -476,7 +474,7 @@
 //
 // // Problem 2: Title Case
 // var titleCase = str => {
-//    return str.toLowerCase().replace(/(^\b(.))|(\s+(.))/g, function(match){
+//    return str.toLowerCase().replace(/(^\b(.))|(\s+(.))/g, (match) => {
 //         return match.toUpperCase();
 //     });
 // }
@@ -553,7 +551,7 @@
 // };
 // // Cades - Best solution
 // function cameCaser(str) {
-//   let words = str.toLowerCase().split('');
+//   let words = str.toLowerCase().split(' ');
 //   return words.split('').map((word, i) => {
 //     if(i === 0) return word;
 //     return word[0].toUpperCase() + word.slice(1);
