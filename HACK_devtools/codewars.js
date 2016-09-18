@@ -24,8 +24,7 @@ the following "err" will be uppercase --> "ERR".
 */
 
 
-const errBob = string => {
-  return newString = string
+const errBob = string => newString = string
   .split(/(?=[\s.?!;:,'"-])/gi)
   .map((word) => {
     if(word[word.length - 1].match(/[bcdfghjklmnpqrstvwxyz]/)) return `${word}err`
