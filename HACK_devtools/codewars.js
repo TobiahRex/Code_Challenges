@@ -24,7 +24,7 @@ the following "err" will be uppercase --> "ERR".
 */
 
 
-let errBob = string => {
+const errBob = string => {
   return newString = string
   .split(/(?=[\s.?!;:,'"-])/gi)
   .map((word) => {
