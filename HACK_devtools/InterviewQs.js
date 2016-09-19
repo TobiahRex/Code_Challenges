@@ -51,6 +51,20 @@ that represents the earliest time when the monkey can jump across the river.
 */
 
 function solution(array, jumpLength) {
+  /*
+    Tracking currentPosition is essential.
+
+    Tracking home will allow us to know if we're close enough to jump from a stone.
+
+    Tracking max required stones is helpful so we don't have to keep looking
+      through the array if we're close enough to jump home.
+
+    Tracking the emerged stones serves 2 purposes.
+    1) Knowing if we have max required stones
+    2) Filter out bad stones (stones less than 0)
+
+    Tracking time, obviously for the answer.
+  */
   let currentPosition = -1
   let home = array.length
   let maxRequiredStones = home - jumpLength
@@ -58,26 +72,46 @@ function solution(array, jumpLength) {
   let time = 0
   console.log('maxRequired Stones: ', maxRequiredStones);
 
+  // We begin by iterating over the stones array.
   for (let i = 0; i < array.length; i++) {
     let currentStone = array[i]
+    console.log('\n---------\n');
     console.log('currentStone: ', currentStone);
+    /*
+      Start by checking if the current stone is in front of us.
+
+      This is because we know that if there is a stone in front of us,
+      then we should always take it.
+    */
     if (currentStone > currentPosition) {
       emergedStones.push(currentStone)
       console.log('emerged stones: ',emergedStones );
-
+      /*
+        Check to see if the current stone can be reached.
+      */
       if ((currentStone - jumpLength) <= currentPosition) {
-        console.log('2: JUMPED to new Stone');
+        console.log('2: JUMPED to new Stone', '\ntime: ', i);
         currentPosition = currentStone
 
-        // console.log('3: ', currentPosition < home && (currentPosition + jumpLength) < home && emergedStones.length !== maxRequiredStones)
-        if (currentPosition < home && (currentPosition + jumpLength) < home && emergedStones.length !== maxRequiredStones) {
-          console.log('current position: ', currentPosition, ' home: ', home);
-          console.log('Not home yet');
-            time += 1
-          }
+        /*
+          if the current Position is less than home, and we can't jump to home,
+          and we haven't reached the maximum required stones yet,
+          then we know we need at least one more stone.
+        */
+        if (currentPosition < home &&
+          (currentPosition + jumpLength) < home &&
+          emergedStones.length !== maxRequiredStones) {
+          console.log('3: current position: ', currentPosition, ' home: ', home, 'not home yet');
+          time += 1
+        } else { // otherwise you can make it home from your current position so return i.
+          console.log('3b: current position: ', currentPosition, ' home:', home, 'time:', time);
+          return i
         }
       }
     }
-    return time
   }
-  console.log('answer: ', solution([1,-1,0,2,3,5], 3))
+  console.log('last line');
+  return time
+}
+// console.log('answer: ', solution([1,-1,0,2,3,5], 3))
+console.log('answer: ', solution([1,-1,5,0,4,3], 3))
