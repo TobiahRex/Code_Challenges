@@ -1,6 +1,21 @@
 'use strict';
 
-// // August 10th, 2015 - KIdaptive Sorting algo
+// // September 19th, 2016
+// function panGram(string) {
+//   let answer = strings.map((sentence) => {
+//     let dictionary = {}
+//     sentence.split(' ').map((word) => {
+//       word.split('').map((letter) => {
+//         console.log('letter: ', letter)
+//         dictionary[letter] ? dictionary[letter] += 1 : dictionary[letter] = 1
+//       })
+//     })
+//     return Object.keys(dictionary).length === 26 ? 1 : 0;
+//   })
+//   return answer.join('')
+// }
+
+// // August 10th, 2016 - KIdaptive Sorting algo
 // function customSort(arr) {
 //     arr = arr.sort((a, b) => a - b);
 //     let dictionary = {}
