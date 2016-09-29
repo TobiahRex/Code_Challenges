@@ -1,5 +1,22 @@
 'use strict';
 
+// 29 September - Diagonal Sum (Again)
+function diagonalSum(matrix) {
+  let total = 0;
+  let n = matrix.length
+  for (let i = 0; i < n; i++){
+    let dleft = matrix[i][i]
+    let dright = matrix[i][(n - (i + 1))]
+    total += (dright + dleft)
+  }
+  if (n % 2 !== 0){
+    let center = Math.floor(n / 2)
+    total -= matrix[center][center]
+  }
+  return total;
+}
+diagonalSum([[0,3,0,6],[5,9,6,1],[4,4,4,2],[1,3,0,9]]) // 39
+diagonalSum([[0,3,0],[5,9,6],[4,4,4]]) // 17
 // // September 19th, 2016
 // function panGram(string) {
 //   let answer = strings.map((sentence) => {
